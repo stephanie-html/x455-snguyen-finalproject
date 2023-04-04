@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Books</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.typekit.net/gmh0xkq.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css"
+
+  </head>
+  
+  <body>    
+<!-- Header -->
+    <div class="header">
+      <a href="1home.html">stephanie nguyen</a>
+    </div>
+
+    <div class="navbar">
+      <a href="2books.html">BOOKS</a>
+      <a href="3blog.html">BLOG</a>
+      <a href="4art.html">ART</a>
+      <a href="5press.html">PRESS</a>
+      <a href="6about.html">ABOUT</a>
+    </div>
+    
+    <hr>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="https://twitter.com/" target="_blank" class="fa 
+    fa-twitter"></a>
+    <a href="https://www.instagram.com/" target="_blank" class="fa fa-instagram"></a>
+    <a href="https://www.tumblr.com/" target="_blank" class="fa fa-tumblr"></a>
+    <a href="https://www.pinterest.com/" target="_blank" class="fa fa-pinterest"></a>
+    <a href="https://www.linkedin.com/" target="_blank" class="fa fa-linkedin"></a>
+  </div>
+
+<!--- layout -->
+
+<div class="books-container">
+  <div class="row">
+    <div class="side">
+      <div class="slideshow-container">
+        <div class="mySlides1">
+          <img src="images/sf1.PNG" style="width:100%">
+        </div>
+      
+        <div class="mySlides1">
+          <img src="images/sf2.PNG" style="width:100%">
+        </div>
+      
+        <div class="mySlides1">
+          <img src="images/sf3.PNG" style="width:100%">
+        </div>
+      
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+      </div>
+    </div>
+    <div class="main">
+      <p class="book-title">SUNDAYS IN SAN FRANCISCO</p>
+      <p class="book-summary">A debut picture book about how magical moments arise out of mundane struggles in everyday life.</p>
+      <p class="book-summary"><b>Art Director:</b> Jamie Wood</p>
+      <p class="book-summary"><b>Editor:</b> Kenneth Anderson</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="side"> 
+      <div class="slideshow-container">
+        <div class="mySlides2">
+          <img src="images/snow1.jpeg" style="width:100%">
+        </div>
+      
+        <div class="mySlides2">
+          <img src="images/snow2.jpeg" style="width:100%">
+        </div>
+      
+        <div class="mySlides2">
+          <img src="images/snow3.jpeg" style="width:100%">
+        </div>
+      
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+      </div>
+    </div>
+    <div class="main">
+      <p class="book-title">WHAT DO YOU KNOW ABOUT SNOW?</p>
+      <p class="book-summary">What do you get when you throw five rambunctious friends into a wintery wonderland?</p>
+      <p class="book-summary"><b>Art Director:</b> Jamie Wood</p>
+      <p class="book-summary"> <b>Editor:</b> Kenneth Anderson</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  let slideIndex = [1,1];
+  let slideId = ["mySlides1", "mySlides2"]
+  showSlides(1, 0);
+  showSlides(1, 1);
+  
+  function plusSlides(n, no) {
+    showSlides(slideIndex[no] += n, no);
+  }
+  
+  function showSlides(n, no) {
+    let i;
+    let x = document.getElementsByClassName(slideId[no]);
+    if (n > x.length) {slideIndex[no] = 1}    
+    if (n < 1) {slideIndex[no] = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    x[slideIndex[no]-1].style.display = "block";  
+  }
+  </script>
+
+
+  </body>
+</html>

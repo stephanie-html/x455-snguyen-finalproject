@@ -1,0 +1,692 @@
+body{
+  margin-bottom: 300px;
+  padding: 0;
+}
+
+hr {
+  width: 50%;
+}
+.header a {
+  margin-top: 20px;  
+  padding: 0;
+  text-decoration: none;
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  color: rgb(231, 173, 200);
+  font-family: looking-flowers-script, sans-serif;
+  font-size: 60px
+}
+
+.header a:hover {
+  opacity: 0.7;
+}
+/* Style the top navigation bar */
+.navbar {
+  display: flex;
+  background-color: #ffffff;
+  justify-content: center;
+  font-family: looking-flowers-caps, sans-serif;
+  font-size: 35px;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  color: black;
+  padding: 14px 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  opacity: 0.2;
+  
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+img {
+  max-width: 105%;
+  height: auto;
+}
+
+.footer {
+  display:flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  color:rgb(183, 183, 183)
+}
+
+.fa:hover {
+    opacity: 0.5;
+}
+
+
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .row, .navbar {   
+    flex-direction: column;
+}}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+/* Column container */
+.row {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  flex: 70%;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* Main column */
+.main {
+  flex: 30%;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  width: 200px;
+  word-wrap: break-word;
+}
+
+* {box-sizing: border-box}
+.mySlides1, .mySlides2 {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a grey background color */
+.prev:hover, .next:hover {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.book-title {
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 500;
+  font-size: 20px;
+  color: rgb(231, 173, 200);
+}
+
+.book-summary {
+  font-family: futura-pt, sans-serif;
+  font-weight: 300;
+}
+
+
+
+
+
+
+/* ART: lightbox gallery */
+.container-art {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 1400px;
+  padding-left: 4%;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.lb-loader,
+.lightbox {
+  text-align: center;
+  line-height: 0;
+  position: absolute;
+  left: 0;
+}
+body.lb-disable-scrolling {
+  overflow: hidden;
+}
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: #000;
+  filter: alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+.lightbox {
+  width: 100%;
+  z-index: 10000;
+  font-weight: 400;
+  outline: 0;
+}
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 3px;
+  border: 4px solid #fff;
+}
+.lightbox a img {
+  border: none;
+}
+.lb-outerContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.lb-loader {
+  top: 43%;
+  height: 25%;
+  width: 100%;
+}
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+.lb-container > .nav {
+  left: 0;
+}
+.lb-nav a {
+  outline: 0;
+  background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==);
+}
+.lb-next,
+.lb-prev {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(../images/prev.png) left 48% no-repeat;
+  filter: alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+.lb-nav a.lb-prev:hover {
+  filter: alpha(Opacity=100);
+  opacity: 1;
+}
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(../images/next.png) right 48% no-repeat;
+  filter: alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+.lb-nav a.lb-next:hover {
+  filter: alpha(Opacity=100);
+  opacity: 1;
+}
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1em;
+}
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999;
+}
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: 0;
+  filter: alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: alpha(Opacity=100);
+  opacity: 1;
+}
+
+
+/* PRESS PAGE CSS BELOW */
+
+/* Column container */
+.container-press {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 1700px;
+}
+
+.row-press {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-press {
+  flex: 60%;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+/* Main column */
+.main-press {
+  flex: 40%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 300;
+  font-size: 16px;
+}
+
+
+.video-container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 710px;
+}
+
+.video-section {
+  background-color: lightpink;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-bottom: 10px;
+}
+
+.video-thumbnail {
+  background-color: rgb(255, 255, 255);
+  flex: 45%;
+}
+
+.video-description {
+  background-color: rgb(255, 255, 255);
+  flex: 55%;
+  width: 200px;
+  word-wrap: break-word;
+  padding-left: 20px;
+}
+
+.video-title {
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 500;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
+.video-summary {
+  font-family: futura-pt, sans-serif;
+  font-weight: 300;
+}
+
+
+@media screen and (max-width: 600px) {
+  .row-press {   
+    flex-direction: column;
+  }}
+
+/* SORTABLE TABLE CSS */
+table {
+  border-collapse: collapse;
+  width: 100%
+}
+
+td, th {
+  border: 1px solid #FFFFFF;
+  text-align: left; 
+  padding: 8px;
+}
+
+tr:nth-child(even)  {
+  background-color: rgb(237, 215, 225);
+}
+
+button {
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 500;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  border: none;
+  background-color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.3;
+  color:rgb(135, 72, 101)
+}
+
+/* ABOUT PAGE CSS BELOW */
+.container-about {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: aqua;
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 300;
+  font-size: 16px;
+  max-width: 800px;
+  margin-bottom: 400px;
+}
+
+.row-about {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-about {
+  flex: 50%;
+  background-color: #ffffff;
+  padding: 20px;
+}
+
+/* Main column */
+.main-about {
+  flex: 50%;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  padding-top: 0px;
+}
+
+.hello {
+  background-color: rgb(255, 255, 255);
+  height: 300px;
+  width: 100%;
+  word-wrap: break-word;
+  margin-bottom: 10px;
+}
+
+.clients {
+  margin-bottom: 30px;
+}
+
+.FAQ {
+  background-color: rgb(255, 255, 255);
+  height: 300px;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .row-about {   
+    flex-direction: column;
+  }}
+
+
+/* BLOG CSS BELOW */
+.container-blog {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: aqua;
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 300;
+  font-size: 16px;
+  max-width: 1000px;
+}
+
+.row-blog {  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side-blog {
+  flex: 60%;
+  background-color: #ffffff;
+  padding: 0px;
+  padding-top: 20px;
+}
+
+/* Main column */
+.main-blog {
+  flex: 40%;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.blog-title {
+  background-color: rgb(255, 255, 255);
+  height: 320px;
+}
+
+.blog-text {
+  background-color: rgb(255, 255, 255);
+  height: 400px;
+  width:auto;
+  overflow:auto;
+}
+
+.post-title {
+  font-family: looking-flowers-caps, sans-serif;
+  font-size: 60px;
+  margin-top: 0px;
+  margin-bottom: -15px;
+}
+
+.post-date {
+  color:#999;
+}
+
+.latest-posts {
+  font-family: looking-flowers-caps, sans-serif;
+  font-size: 50px;
+  margin: 0px;
+  margin-top: -20px;
+}
+
+.post-container {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  margin-left: 100px;
+  max-width: 250px;
+  padding-top: 20px;
+}
+
+.post-section {
+  background-color: lightpink;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-bottom: 25px;
+}
+
+.post-thumbnail {
+  background-color: #ffffff;
+  flex: 45%;
+}
+
+.post-description {
+  background-color: rgb(255, 255, 255);
+  flex: 55%;
+  width: 200px;
+  word-wrap: break-word;
+  padding-left: 20px;
+}
+
+.latest-post-title {
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 500;
+  font-size: 12px;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.latest-post-date {
+  font-family: futura-pt, sans-serif;
+  FONT-WEIGHT: 200;
+  font-size: 12px;
+  margin: 0px;
+  color:#999;
+}
+
+@media screen and (max-width: 600px) {
+  .row-blog {   
+    flex-direction: column;
+  }}
+
+
